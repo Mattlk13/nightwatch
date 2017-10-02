@@ -24,7 +24,8 @@
     "mocha-nightwatch": "2.2.9",
     "optimist": ">=0.3.5",
     "proxy-agent": ">=2.0.0",
-    "q": "^1.1.2"
+    "q": "^1.1.2",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "chai": "^3.2.0",
@@ -52,7 +53,9 @@
     "mocha-coverage": "jscoverage lib --exclude *.ejs,*.json && NIGHTWATCH_COV=1 ./node_modules/.bin/mocha test/src --reporter html-cov > coverage.html",
     "mocha-lcov-coverage": "jscoverage lib --exclude *.ejs,*.json && NIGHTWATCH_COV=1 ./node_modules/.bin/mocha test/src --reporter mocha-lcov-reporter > lib-cov/coverage.lcov",
     "test": "./node_modules/.bin/mocha test/src",
-    "unit-tests": "./bin/nightwatch -c test/nightwatch.json"
+    "unit-tests": "./bin/nightwatch -c test/nightwatch.json",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "files": [
     "bin",
@@ -61,5 +64,6 @@
     "README.md",
     "LICENSE.md",
     "index.js"
-  ]
+  ],
+  "snyk": true
 }

@@ -25,7 +25,8 @@
     "minimatch": "3.0.4",
     "mkpath": "1.0.0",
     "optimist": "^0.6.1",
-    "proxy-agent": "^3.0.0"
+    "proxy-agent": "^3.0.0",
+    "snyk": "^1.231.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -49,7 +50,9 @@
     "eslint": "eslint . --quiet",
     "mocha-coverage": "nyc --reporter=html mocha test/src/",
     "test": "mocha test/src",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -79,5 +82,6 @@
     "README.md",
     "LICENSE.md",
     "index.js"
-  ]
+  ],
+  "snyk": true
 }
